@@ -141,7 +141,9 @@ const Sidebar = () => {
                   Embeddables
                 </li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Language</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Sign Up</li>
+                <Link to="signup">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Sign Up</li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Settings</li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Custom Fields

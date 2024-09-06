@@ -8,6 +8,7 @@ import CreateCourse from "./pages/CreateCourses";
 import Web from "./pages/Web";
 import Mobile from "./pages/Mobile";
 import Branding from "./pages/Branding";
+import SignUpSettings from "./pages/SinupSetting";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/web"element={<Web/>}/>
           <Route path="/mobile"element={<Mobile/>}/>
           <Route path="/branding"element={<Branding/>}/>
+          <Route path="/signup"element={<SignUpSettings/>}/>
         </Routes>
       </div>
     </div>
