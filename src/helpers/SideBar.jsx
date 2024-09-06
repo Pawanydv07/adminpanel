@@ -54,7 +54,9 @@ const Sidebar = () => {
             </div>
             {openMenu === "contents" && (
               <ul className="ml-8 mt-2 space-y-2">
-               <Link to="/courses"><li className="py-1 hover:bg-gray-200 rounded-lg">Courses</li></Link> 
+                <Link to="/courses">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Courses</li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Live Classes
                 </li>
@@ -105,7 +107,10 @@ const Sidebar = () => {
             >
               <div className="flex items-center space-x-4">
                 <AiFillAppstore className="text-xl" />
-                <span>Websites & Apps</span>
+                <Link to="/web">
+                  {" "}
+                  <span>Websites & Apps</span>
+                </Link>
               </div>
               <div className="ml-auto">
                 {openMenu === "websitesApps" ? (
@@ -117,6 +122,11 @@ const Sidebar = () => {
             </div>
             {openMenu === "websitesApps" && (
               <ul className="ml-8 mt-2 space-y-2">
+                <Link to="/web">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Websites & Apps
+                  </li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Mobile Apps
                 </li>

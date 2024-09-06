@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import Courses from "./pages/Courses";
 import Sidebar from "./helpers/SideBar";
 import CreateCourse from "./pages/CreateCourses";
+import Web from "./pages/Web";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
 
           {/* Add more Routes as needed */}
           <Route path="/create-course" element={<CreateCourse/>} />
+          <Route path="/web"element={<Web/>}/>
         </Routes>
       </div>
     </div>
