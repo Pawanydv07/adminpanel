@@ -6,6 +6,7 @@ import Courses from "./pages/Courses";
 import Sidebar from "./helpers/SideBar";
 import CreateCourse from "./pages/CreateCourses";
 import Web from "./pages/Web";
+import Mobile from "./pages/Mobile";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           {/* Add more Routes as needed */}
           <Route path="/create-course" element={<CreateCourse/>} />
           <Route path="/web"element={<Web/>}/>
+          <Route path="/mobile"element={<Mobile/>}/>
         </Routes>
       </div>
     </div>

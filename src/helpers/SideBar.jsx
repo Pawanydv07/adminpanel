@@ -124,12 +124,14 @@ const Sidebar = () => {
               <ul className="ml-8 mt-2 space-y-2">
                 <Link to="/web">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">
-                    Websites & Apps
+                    Websites
                   </li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Mobile Apps
-                </li>
+                <Link to="/mobile">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Mobile Apps
+                  </li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Branding</li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Embeddables
