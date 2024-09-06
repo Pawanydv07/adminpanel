@@ -9,6 +9,8 @@ import Web from "./pages/Web";
 import Mobile from "./pages/Mobile";
 import Branding from "./pages/Branding";
 import SignUpSettings from "./pages/SinupSetting";
+import LearnersTable from "./pages/AllLearner";
+import Progress from "./pages/Progress";
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
           <Route path="/mobile"element={<Mobile/>}/>
           <Route path="/branding"element={<Branding/>}/>
           <Route path="/signup"element={<SignUpSettings/>}/>
+          <Route path="/learners"element={<LearnersTable/>}/>
+          <Route path="/progress"element={<Progress/>}/>
         </Routes>
       </div>
     </div>

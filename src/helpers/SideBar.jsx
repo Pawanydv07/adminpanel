@@ -207,7 +207,11 @@ const Sidebar = () => {
             </div>
             {openMenu === "users" && (
               <ul className="ml-8 mt-2 space-y-2">
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Learners</li>
+                <Link to="/learners">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Learners
+                  </li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Groups</li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Sub-Admins
@@ -245,9 +249,12 @@ const Sidebar = () => {
                   Payment Gateways
                 </li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Invoices</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Progress & Scores
-                </li>
+                <Link to="/progress">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Progress & Scores
+                  </li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Sales & Marketing
                 </li>

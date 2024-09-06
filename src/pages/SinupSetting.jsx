@@ -9,54 +9,55 @@ const SignUpSettings = () => {
   const [appleChecked, setAppleChecked] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-10">
-      {/* Header Section */}
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Sign up settings</h1>
-        <p className="text-gray-500 mb-6">
-          Configure your learner sign up flow.
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-10">
+      {/* Main Container */}
+      <div className="max-w-5xl w-full bg-white shadow-md rounded-lg p-10">
+        {/* Header Section */}
+        <h1 className="text-4xl font-extrabold mb-6 text-gray-800">Sign up settings</h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Configure your learner sign-up flow.
         </p>
 
         {/* Signup Options */}
         <div className="flex justify-between items-start mb-8">
           {/* Email & Social Signups */}
-          <div>
-            <label className="flex items-center space-x-2 mb-2">
+          <div className="w-2/3">
+            <label className="flex items-center space-x-3 mb-4">
               <input
                 type="radio"
                 name="signupType"
                 checked={signupType === 'email'}
                 onChange={() => setSignupType('email')}
-                className="form-radio h-4 w-4 text-blue-600"
+                className="form-radio h-5 w-5 text-blue-600"
               />
-              <span className="font-semibold text-lg">Email & Social Sign Ups</span>
+              <span className="font-bold text-2xl">Email & Social Sign Ups</span>
             </label>
-            <p className="text-gray-500">
-              You can allow your learners to sign up using their email id, Google, Facebook, and Apple accounts.
+            <p className="text-lg text-gray-600 mb-6">
+              You can allow your learners to sign up using their email, Google, Facebook, and Apple accounts.
             </p>
-            <div className="mt-4 space-y-4">
+            <div className="space-y-5">
               {/* Email */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <input
                   type="checkbox"
                   checked={emailChecked}
                   onChange={() => setEmailChecked(!emailChecked)}
-                  className="form-checkbox h-4 w-4 text-blue-600"
+                  className="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <span className="font-medium">Email</span>
+                <span className="text-xl font-medium">Email</span>
               </div>
 
               {/* Google */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <input
                   type="checkbox"
                   checked={googleChecked}
                   onChange={() => setGoogleChecked(!googleChecked)}
-                  className="form-checkbox h-4 w-4 text-blue-600"
+                  className="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <span className="font-medium">Google</span>
+                <span className="text-xl font-medium">Google</span>
                 <button
-                  className="bg-gray-200 text-gray-500 px-4 py-1 rounded"
+                  className="bg-gray-200 text-gray-500 px-5 py-2 rounded-lg"
                   disabled={!googleChecked}
                 >
                   Configure
@@ -64,16 +65,16 @@ const SignUpSettings = () => {
               </div>
 
               {/* Facebook */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <input
                   type="checkbox"
                   checked={facebookChecked}
                   onChange={() => setFacebookChecked(!facebookChecked)}
-                  className="form-checkbox h-4 w-4 text-blue-600"
+                  className="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <span className="font-medium">Facebook</span>
+                <span className="text-xl font-medium">Facebook</span>
                 <button
-                  className="bg-gray-200 text-gray-500 px-4 py-1 rounded"
+                  className="bg-gray-200 text-gray-500 px-5 py-2 rounded-lg"
                   disabled={!facebookChecked}
                 >
                   Configure
@@ -81,51 +82,51 @@ const SignUpSettings = () => {
               </div>
 
               {/* Apple */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <input
                   type="checkbox"
                   checked={appleChecked}
                   onChange={() => setAppleChecked(!appleChecked)}
-                  className="form-checkbox h-4 w-4 text-blue-600"
+                  className="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <span className="font-medium">Apple</span>
+                <span className="text-xl font-medium">Apple</span>
                 <button
-                  className="bg-gray-200 text-gray-500 px-4 py-1 rounded"
+                  className="bg-gray-200 text-gray-500 px-5 py-2 rounded-lg"
                   disabled={!appleChecked}
                 >
                   Configure
                 </button>
               </div>
             </div>
-            <p className="text-gray-400 mt-2 text-sm">
+            <p className="text-gray-400 mt-4 text-sm">
               Note: Social sign-ups can be configured solo or can be added with Email type only.
             </p>
           </div>
 
           {/* Username Signups */}
-          <div>
-            <label className="flex items-center space-x-2 mb-2">
+          <div className="w-1/3">
+            <label className="flex items-center space-x-3 mb-4">
               <input
                 type="radio"
                 name="signupType"
                 checked={signupType === 'username'}
                 onChange={() => setSignupType('username')}
-                className="form-radio h-4 w-4 text-blue-600"
+                className="form-radio h-5 w-5 text-blue-600"
               />
-              <span className="font-semibold text-lg">User Name</span>
+              <span className="font-bold text-2xl">User Name</span>
             </label>
-            <p className="text-gray-500">
+            <p className="text-lg text-gray-600">
               You can allow your learners to sign up using a username.
             </p>
           </div>
         </div>
 
-        {/* Save Button */}
-        <div className="flex justify-between">
-          <button className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+        {/* Save and Verification Buttons */}
+        <div className="flex justify-between mt-8">
+          <button className="bg-green-600 text-white font-bold px-8 py-3 rounded-lg text-lg hover:bg-green-700">
             Save
           </button>
-          <button className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg hover:bg-gray-100">
+          <button className="border border-gray-300 text-gray-600 px-6 py-3 rounded-lg text-lg hover:bg-gray-100">
             Verification
           </button>
         </div>
