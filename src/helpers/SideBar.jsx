@@ -132,7 +132,11 @@ const Sidebar = () => {
                     Mobile Apps
                   </li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Branding</li>
+                <Link to="/branding">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Branding
+                  </li>
+                </Link>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Embeddables
                 </li>
