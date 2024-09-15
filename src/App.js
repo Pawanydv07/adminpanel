@@ -11,6 +11,18 @@ import Branding from "./pages/Branding";
 import SignUpSettings from "./pages/SinupSetting";
 import LearnersTable from "./pages/AllLearner";
 import Progress from "./pages/Progress";
+import MockTestDashboard from "./pages/MockTest";
+import CreateMockTest from "./pages/CreateMockTest";
+import TestSeriesPage from "./pages/TestSeriesPage";
+import Telegram from "./pages/Telegram";
+import Webinar from "./pages/Webinar";
+import Bundles from "./pages/Bundles";
+import Digital from "./pages/Digital";
+import EBook from "./pages/EBook";
+import FreeResources from "./pages/FreeResources";
+import Utility from "./pages/Utility";
+import Podcast from "./pages/Podcast";
+import CreateTestSeries from "./pages/CreateTestSeries";
 
 const App = () => {
   return (
@@ -28,13 +40,25 @@ const App = () => {
           <Route path="/courses" element={<Courses />} />
 
           {/* Add more Routes as needed */}
-          <Route path="/create-course" element={<CreateCourse/>} />
-          <Route path="/web"element={<Web/>}/>
-          <Route path="/mobile"element={<Mobile/>}/>
-          <Route path="/branding"element={<Branding/>}/>
-          <Route path="/signup"element={<SignUpSettings/>}/>
-          <Route path="/learners"element={<LearnersTable/>}/>
-          <Route path="/progress"element={<Progress/>}/>
+          <Route path="/create-course" element={<CreateCourse />} />
+          <Route path="/web" element={<Web />} />
+          <Route path="/mobile" element={<Mobile />} />
+          <Route path="/branding" element={<Branding />} />
+          <Route path="/signup" element={<SignUpSettings />} />
+          <Route path="/learners" element={<LearnersTable />} />
+          <Route path="/progress" element={<Progress />} />
+          <Route path="/mock" element={<MockTestDashboard />} />
+          <Route path="/mocktest" element={<CreateMockTest />} />
+          <Route path="/test" element={<TestSeriesPage />} />
+          <Route path="/telegram" element={<Telegram />} />
+          <Route path="/webinar" element={<Webinar />} />
+          <Route path="/bundles" element={<Bundles />} />
+          <Route path="/digital" element={<Digital />} />
+          <Route path="/ebook" element={<EBook />} />
+          <Route path="/free-resources" element={<FreeResources />} />
+          <Route path="/utilities" element={<Utility />} />
+          <Route path="/podcast" element={<Podcast />} />
+          <Route path="/createtest" element={<CreateTestSeries />} />
         </Routes>
       </div>
     </div>

@@ -57,45 +57,102 @@ const Sidebar = () => {
                 <Link to="/courses">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">Courses</li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Live Classes
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Mock Test</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Test Series
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Bundles</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Batch <span className="text-green-500 text-xs">(Beta)</span>
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Ebooks</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Podcasts</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Webinar</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Digital Products
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Free Resource
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Telegram</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Utilities</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Legacy Question Pool
-                </li>
+                <Link to="/liveclass">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Live Classes
+                  </li>
+                </Link>
+                <Link to="/mock">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Mock Test
+                  </li>
+                </Link>
+                <Link to="/test">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Test Series
+                  </li>
+                </Link>
+                <Link to="/bundles">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Bundles</li>
+                </Link>
+                <Link to="/beta">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Batch <span className="text-green-500 text-xs">(Beta)</span>
+                  </li>
+                </Link>
+                <Link to="/ebook">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Ebooks</li>
+                </Link>
+                <Link to="/podcast">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Podcasts
+                  </li>
+                </Link>
+                <Link to="/webinar">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Webinar</li>
+                </Link>
+                <Link to="/digital">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Digital Products
+                  </li>
+                </Link>
+                <Link to="/free-resources">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Free Resource
+                  </li>
+                </Link>
+                <Link to="/telegram">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Telegram
+                  </li>
+                </Link>
+                <Link to="/utilities">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Utilities
+                  </li>
+                </Link>
+                <Link to="/legacy">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Legacy Question Pool
+                  </li>
+                </Link>
+
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
                   Question Pool
                 </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Subscriptions
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Newsfeed</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Communities
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Categories
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Segments</li>
+                <Link to="/subs">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Subscriptions
+                  </li>
+                </Link>
+                <Link to="/news">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Newsfeed
+                  </li>
+                </Link>
+                <Link to="/comm">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Communities
+                  </li>
+                </Link>
+                <Link to="/cate">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Categories
+                  </li>
+                </Link>
+                <Link to="/segment">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Segments
+                  </li>
+                </Link>
+
                 <li className="py-1 hover:bg-gray-200 rounded-lg">Tags</li>
               </ul>
             )}
@@ -212,11 +269,21 @@ const Sidebar = () => {
                     Learners
                   </li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Groups</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Sub-Admins
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Contacts</li>
+                `
+                <Link to="/groups">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Groups</li>
+                </Link>
+                <Link to="/sub-admin">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Sub-Admins
+                  </li>
+                </Link>
+                <Link to="/contact">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Contacts
+                  </li>
+                </Link>
               </ul>
             )}
           </li>

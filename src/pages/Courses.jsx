@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const courses = [
+const hardcodedCourses = [
   {
     id: 1,
     title: "AP Calculus AB",
@@ -12,7 +13,7 @@ const courses = [
     bgColor: "bg-indigo-900",
     textColor: "text-white",
     imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/203244/172366356818810_lyst1723663568217.png", // No image for placeholder
+      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/203244/172366356818810_lyst1723663568217.png",
   },
   {
     id: 2,
@@ -24,7 +25,7 @@ const courses = [
     bgColor: "bg-pink-500",
     textColor: "text-white",
     imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201225/17233704501301_lyst1723370450348.png", // No image for placeholder
+      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201225/17233704501301_lyst1723370450348.png",
   },
   {
     id: 3,
@@ -38,50 +39,28 @@ const courses = [
     bgColor: "bg-teal-500",
     textColor: "text-white",
     imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201209/17233704099704_lyst1723370410088.png", // No image for placeholder
-  },
-  {
-    id: 1,
-    title: "AP Calculus AB",
-    lessons: 84,
-    duration: "21 hrs 7 mins 42 secs",
-    price: "₹14,999",
-    days: 31,
-    bgColor: "bg-indigo-900",
-    textColor: "text-white",
-    imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/203244/172366356818810_lyst1723663568217.png", // No image for placeholder
-  },
-  {
-    id: 2,
-    title: "AP Statistics",
-    lessons: 31,
-    duration: "14 hrs 16 mins 15 secs",
-    price: "₹14,999",
-    days: 31,
-    bgColor: "bg-pink-500",
-    textColor: "text-white",
-    imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201225/17233704501301_lyst1723370450348.png", // No image for placeholder
-  },
-  {
-    id: 3,
-    title: "Digital SAT Full Course",
-    lessons: 53,
-    duration: "16 hrs 27 mins 20 secs",
-    originalPrice: "₹24,999",
-    discountedPrice: "₹22,999",
-    discount: "8% off",
-    days: 365,
-    bgColor: "bg-teal-500",
-    textColor: "text-white",
-    imageUrl:
-      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201209/17233704099704_lyst1723370410088.png", // No image for placeholder
+      "https://imgproxy.learnyst.com/learnyst-user-assets/school-assets/schools/170997/courses/201209/17233704099704_lyst1723370410088.png",
   },
 ];
 
 const CoursesPage = () => {
-    const navigate = useNavigate(); 
+  const [courses, setCourses] = useState(hardcodedCourses);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/courses");
+        const fetchedCourses = response.data; // Assuming API response is an array of courses
+        setCourses([...hardcodedCourses, ...fetchedCourses]); // Replace the previous courses
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
   return (
     <div className="container mx-auto p-6">
       {/* Header section with search, filter, and buttons */}
@@ -112,7 +91,7 @@ const CoursesPage = () => {
             </button>
             <button
               className="bg-green-500 text-white px-4 py-2 rounded-md shadow-md"
-              onClick={() => navigate("/create-course")} // Navigate to Create Course page
+              onClick={() => navigate("/create-course")}
             >
               + Create
             </button>
@@ -130,7 +109,7 @@ const CoursesPage = () => {
         <div className="flex justify-between items-center border-t border-b py-4">
           <div className="text-center">
             <p className="font-bold text-lg">Total Course</p>
-            <p className="text-2xl">9</p>
+            <p className="text-2xl">{courses.length}</p>
           </div>
           <div className="text-center">
             <p className="font-bold text-lg">Encrypted Course</p>
@@ -148,14 +127,14 @@ const CoursesPage = () => {
       </div>
 
       {/* Courses Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {courses.map((course) => (
           <div
             key={course.id}
-            className={`${course.bgColor} ${course.textColor} p-6 rounded-lg shadow-lg`}
+            className={`${course.bgColor} ${course.textColor} p-6 rounded-lg shadow-lg `}
           >
             {/* Image Placeholder */}
-            <div className="mb-4">
+            <div className="mb-4 bg-green-200">
               {course.imageUrl ? (
                 <img
                   src={course.imageUrl}
@@ -163,8 +142,13 @@ const CoursesPage = () => {
                   className="w-full h-40 object-cover rounded-md"
                 />
               ) : (
-                <div className="w-full h-40 bg-gray-300 rounded-md flex items-center justify-center">
-                  <span className="text-gray-500">Image Placeholder</span>
+                <div className="w-full h-40 bg-red-300 rounded-md flex items-center justify-center">
+                  <span className="text-white">
+                    {" "}
+                    <h2 className="text-xl font-semibold mb-2">
+                      {course.title}
+                    </h2>
+                  </span>
                 </div>
               )}
             </div>

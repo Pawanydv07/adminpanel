@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const CreateCourse = () => {
   const [title, setTitle] = useState('');
@@ -6,8 +7,10 @@ const CreateCourse = () => {
   const [duration, setDuration] = useState('');
   const [price, setPrice] = useState('');
   const [days, setDays] = useState('');
+  const [showModal, setShowModal] = useState(false); // For controlling modal visibility
+  const [errorMessage, setErrorMessage] = useState(''); // Error handling
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newCourse = {
@@ -18,9 +21,27 @@ const CreateCourse = () => {
       days,
     };
 
-    console.log('New Course Data:', newCourse);
+    try {
+      const response = await axios.post('http://localhost:5000/api/courses', newCourse);
+      console.log('New Course Data:', response.data);
 
-    // Logic to save the new course, e.g., API call or updating state
+      // Show success modal if course creation is successful
+      setShowModal(true);
+
+      // Reset form fields after successful creation
+      setTitle('');
+      setLessons('');
+      setDuration('');
+      setPrice('');
+      setDays('');
+    } catch (error) {
+      console.error('Error creating course:', error);
+      setErrorMessage('Failed to create course');
+    }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -36,6 +57,7 @@ const CreateCourse = () => {
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter course title"
             className="border border-gray-300 rounded-md p-2 w-full"
+            required
           />
         </div>
 
@@ -47,6 +69,7 @@ const CreateCourse = () => {
             onChange={(e) => setLessons(e.target.value)}
             placeholder="Enter number of lessons"
             className="border border-gray-300 rounded-md p-2 w-full"
+            required
           />
         </div>
 
@@ -58,17 +81,19 @@ const CreateCourse = () => {
             onChange={(e) => setDuration(e.target.value)}
             placeholder="Enter course duration"
             className="border border-gray-300 rounded-md p-2 w-full"
+            required
           />
         </div>
 
         <div>
           <label className="block text-lg font-semibold mb-2">Price</label>
           <input
-            type="text"
+            type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Enter course price"
             className="border border-gray-300 rounded-md p-2 w-full"
+            required
           />
         </div>
 
@@ -80,8 +105,11 @@ const CreateCourse = () => {
             onChange={(e) => setDays(e.target.value)}
             placeholder="Enter number of days"
             className="border border-gray-300 rounded-md p-2 w-full"
+            required
           />
         </div>
+
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
 
         <button
           type="submit"
@@ -90,6 +118,22 @@ const CreateCourse = () => {
           Create Course
         </button>
       </form>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-6 rounded-md shadow-lg">
+            <h2 className="text-xl font-bold mb-4">Success!</h2>
+            <p>Course added successfully.</p>
+            <button
+              onClick={closeModal}
+              className="bg-green-500 text-white px-4 py-2 rounded-md mt-4"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

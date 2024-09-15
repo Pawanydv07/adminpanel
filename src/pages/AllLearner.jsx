@@ -1,67 +1,141 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const LearnersTable = () => {
-  // Example data for learners
-  const [learners, setLearners] = useState([
-    { email: "sneha@learnyst.com", mobile: "-", lastLogin: "07 Aug 2024", totalSpent: "-", signedUpon: "07 Aug 2024" },
-    { email: "anujguptacgc@gmail.com", mobile: "-", lastLogin: "01 Aug 2024", totalSpent: "-", signedUpon: "01 Aug 2024" },
-    { email: "anujgupta3391@gmail.com", mobile: "+919216558059", lastLogin: "06 Sep 2024", totalSpent: "₹0", signedUpon: "14 Apr 2024" },
-    // Add more learners here if needed
-  ]);
+const learnersData = [
+  { id: 1, name: "John Doe", email: "john@example.com", progress: "80%" },
+  { id: 2, name: "Jane Smith", email: "jane@example.com", progress: "50%" },
+  { id: 3, name: "Bob Johnson", email: "bob@example.com", progress: "90%" },
+  { id: 4, name: "Alice Brown", email: "alice@example.com", progress: "60%" },
+  { id: 5, name: "Charlie Black", email: "charlie@example.com", progress: "70%" },
+  // Add more learners as needed
+];
 
-  // Pagination
+const LearnerTable = () => {
+  const [learners, setLearners] = useState(learnersData);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 10;
+  const [learnersPerPage] = useState(5); // Set how many learners per page
+
+  // Filter learners based on search term
+  useEffect(() => {
+    if (searchTerm === "") {
+      setLearners(learnersData);
+    } else {
+      setLearners(
+        learnersData.filter((learner) =>
+          learner.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+    }
+  }, [searchTerm]);
+
+  // Sort learners based on the sort config
+  const handleSort = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const sortedLearners = React.useMemo(() => {
+    if (sortConfig.key !== null) {
+      const sorted = [...learners].sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? 1 : -1;
+        }
+        return 0;
+      });
+      return sorted;
+    }
+    return learners;
+  }, [learners, sortConfig]);
 
   // Pagination logic
-  const indexOfLastRow = currentPage * rowsPerPage;
-  const indexOfFirstRow = indexOfLastRow - rowsPerPage;
-  const currentRows = learners.slice(indexOfFirstRow, indexOfLastRow);
+  const indexOfLastLearner = currentPage * learnersPerPage;
+  const indexOfFirstLearner = indexOfLastLearner - learnersPerPage;
+  const currentLearners = sortedLearners.slice(indexOfFirstLearner, indexOfLastLearner);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-2xl font-bold mb-4">All Learners</h1>
+    <div className="p-8">
+      <h1 className="text-2xl font-semibold mb-4">Learner Progress Table</h1>
       <div className="mb-4">
-        <button className="btn">Export</button>
-        <button className="btn">Create Group</button>
-        <button className="btn">Send Message</button>
+        <input
+          type="text"
+          placeholder="Search by name"
+          className="px-4 py-2 border rounded-lg"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
-      <table className="min-w-full border-collapse block md:table">
+      <table className="min-w-full bg-white border rounded-lg">
         <thead>
-          <tr className="block md:table-row">
-            <th className="text-left p-2 md:table-cell">Email</th>
-            <th className="text-left p-2 md:table-cell">Mobile</th>
-            <th className="text-left p-2 md:table-cell">Last Login</th>
-            <th className="text-left p-2 md:table-cell">Total Spent</th>
-            <th className="text-left p-2 md:table-cell">Signed Upon</th>
+          <tr>
+            <th
+              className="py-2 px-4 border-b cursor-pointer"
+              onClick={() => handleSort("name")}
+            >
+              Name
+            </th>
+            <th
+              className="py-2 px-4 border-b cursor-pointer"
+              onClick={() => handleSort("email")}
+            >
+              Email
+            </th>
+            <th
+              className="py-2 px-4 border-b cursor-pointer"
+              onClick={() => handleSort("progress")}
+            >
+              Progress
+            </th>
+            <th className="py-2 px-4 border-b">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {currentRows.map((learner, index) => (
-            <tr key={index} className="block md:table-row">
-              <td className="p-2 md:table-cell">{learner.email}</td>
-              <td className="p-2 md:table-cell">{learner.mobile}</td>
-              <td className="p-2 md:table-cell">{learner.lastLogin}</td>
-              <td className="p-2 md:table-cell">{learner.totalSpent}</td>
-              <td className="p-2 md:table-cell">{learner.signedUpon}</td>
+          {currentLearners.map((learner) => (
+            <tr key={learner.id}>
+              <td className="py-2 px-4 border-b">{learner.name}</td>
+              <td className="py-2 px-4 border-b">{learner.email}</td>
+              <td className="py-2 px-4 border-b">{learner.progress}</td>
+              <td className="py-2 px-4 border-b">
+                <button className="text-blue-600 hover:underline">View</button>{" "}
+                |{" "}
+                <button className="text-green-600 hover:underline">
+                  Edit
+                </button>{" "}
+                |{" "}
+                <button className="text-red-600 hover:underline">
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
 
+      {/* Pagination */}
       <div className="mt-4">
-        <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className="mr-2">
-          Previous
-        </button>
-        <span>Page {currentPage}</span>
-        <button onClick={() => paginate(currentPage + 1)} disabled={currentPage >= Math.ceil(learners.length / rowsPerPage)} className="ml-2">
-          Next
-        </button>
+        {Array.from({ length: Math.ceil(learners.length / learnersPerPage) }).map(
+          (_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => paginate(i + 1)}
+              className={`px-4 py-2 border rounded-md ${
+                i + 1 === currentPage ? "bg-blue-600 text-white" : "bg-gray-200"
+              }`}
+            >
+              {i + 1}
+            </button>
+          )
+        )}
       </div>
     </div>
   );
 };
 
-export default LearnersTable;
+export default LearnerTable;
