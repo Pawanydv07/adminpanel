@@ -11,7 +11,7 @@ const TestSeriesPage = () => {
   useEffect(() => {
     const fetchTestSeries = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/test-series/gettest");
+        const response = await axios.get("https://ad-2.onrender.com/api/test-series/gettest");
         setTestSeries(response.data);
       } catch (err) {
         setError("Failed to fetch test series");

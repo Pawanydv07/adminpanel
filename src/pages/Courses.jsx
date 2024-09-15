@@ -50,7 +50,7 @@ const CoursesPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/courses");
+        const response = await axios.get("https://ad-2.onrender.com/api/courses");
         const fetchedCourses = response.data; // Assuming API response is an array of courses
         setCourses([...hardcodedCourses, ...fetchedCourses]); // Replace the previous courses
       } catch (error) {

@@ -21,7 +21,7 @@ const CreateMockTest = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/mocktests/create",
+        "https://ad-2.onrender.com/api/mocktests/create",
         mockTestData
       );
       console.log("Mock test created:", response.data);

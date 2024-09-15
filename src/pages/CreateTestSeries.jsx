@@ -19,7 +19,7 @@ const CreateTestSeries = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/test-series/create', {
+      const response = await axios.post('https://ad-2.onrender.com/api/test-series/create', {
         title,
         price: isFree ? 0 : price,
         isFree

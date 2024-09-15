@@ -22,7 +22,7 @@ const CreateCourse = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/courses', newCourse);
+      const response = await axios.post('https://ad-2.onrender.com/api/courses', newCourse);
       console.log('New Course Data:', response.data);
 
       // Show success modal if course creation is successful

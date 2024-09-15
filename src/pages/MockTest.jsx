@@ -20,7 +20,7 @@ const MockTestDashboard = () => {
   useEffect(() => {
     const fetchMockTests = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/mocktests"); // Your backend API
+        const response = await axios.get("https://ad-2.onrender.com/api/mocktests"); // Your backend API
         setMockTests(response.data); // Update state with the fetched data
       } catch (error) {
         console.error("Error fetching mock tests:", error);
