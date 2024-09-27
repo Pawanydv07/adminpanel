@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-const Podcast = () => {
+const Subscription = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleNavigation = () => {
-    navigate("/createPodcast"); // Navigate to the createPodcast page
+    navigate("/createSubscription"); // Navigate to the createSubscription page
   };
 
   return (
@@ -14,9 +14,9 @@ const Podcast = () => {
         {/* Page Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Test Series</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Subscriptions</h1>
             <p className="text-gray-500">
-              Welcome to your test series dashboard
+              Welcome to your subscription dashboard
             </p>
           </div>
 
@@ -66,4 +66,4 @@ const Podcast = () => {
   );
 };
 
-export default Podcast;
+export default Subscription;

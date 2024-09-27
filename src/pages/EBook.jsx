@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const EBook = () => {
+  const navigate = useNavigate();
+
+  // Correct way to define the navigation function
+  const handleNavigation = () => {
+    navigate("/createBook");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-6">
       <div className="max-w-7xl mx-auto">
@@ -15,7 +23,10 @@ const EBook = () => {
 
           {/* Action Buttons */}
           <div className="flex space-x-4">
-            <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
+            <button
+              className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+              onClick={handleNavigation} // Remove the parentheses to prevent immediate execution
+            >
               + CREATE
             </button>
             <button className="bg-gray-100 border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200">

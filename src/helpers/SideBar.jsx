@@ -194,17 +194,30 @@ const Sidebar = () => {
                     Branding
                   </li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Embeddables
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Language</li>
+                <Link to="/embed">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Embeddables
+                  </li>
+                </Link>
+                <Link to="/lang">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Language
+                  </li>
+                </Link>
                 <Link to="signup">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">Sign Up</li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Settings</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Custom Fields
-                </li>
+                <Link to="/setting">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Settings
+                  </li>
+                </Link>
+                <Link to="/custom">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Custom Fields
+                  </li>
+                </Link>
               </ul>
             )}
           </li>
@@ -225,23 +238,36 @@ const Sidebar = () => {
                 )}
               </div>
             </div>
+
             {openMenu === "marketing" && (
               <ul className="ml-8 mt-2 space-y-2">
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Messenger</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Coupons</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Wallet</li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Referral Code
+                  <Link to="/marketing/messenger">Messenger</Link>
                 </li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Integrations
+                  <Link to="/marketing/coupons">Coupons</Link>
                 </li>
                 <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Affiliates
+                  <Link to="/marketing/wallet">Wallet</Link>
                 </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Forms</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">CTA</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Events</li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/referral-code">Referral Code</Link>
+                </li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/integrations">Integrations</Link>
+                </li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/affiliates">Affiliates</Link>
+                </li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/forms">Forms</Link>
+                </li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/cta">CTA</Link>
+                </li>
+                <li className="py-1 hover:bg-gray-200 rounded-lg">
+                  <Link to="/marketing/events">Events</Link>
+                </li>
               </ul>
             )}
           </li>
