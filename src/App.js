@@ -39,7 +39,7 @@ const App = () => {
   const location = useLocation(); // Get the current location
 
   // Condition to hide the sidebar on the "/mobile" and "/subscribeMobile" pages
-  const hideSidebarPages = ["/mobile", "/subscribeMobile"];
+  const hideSidebarPages = ["/mobile", "/subscribeMobile","/pricing"];
   const isSidebarHidden = hideSidebarPages.includes(location.pathname);
 
   return (

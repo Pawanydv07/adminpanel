@@ -45,7 +45,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-10 ">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-6">Select Plan</h2>
         <p className="text-center text-gray-500 mb-4">
@@ -131,7 +131,7 @@ const PricingPlans = () => {
           <div className="flex justify-center gap-8">
             <div className="text-center">
               <img
-                src="path-to-your-icon1" // Replace with your icon source
+                src="https://res-cdn.learnyst.com/pro/admin-v3/media/enterprise1.png" // Replace with your icon source
                 alt="Custom Developed Apps"
                 className="mx-auto mb-4"
               />
@@ -143,7 +143,7 @@ const PricingPlans = () => {
 
             <div className="text-center">
               <img
-                src="path-to-your-icon2" // Replace with your icon source
+                src="https://res-cdn.learnyst.com/pro/admin-v3/media/enterprise2.png" // Replace with your icon source
                 alt="Enterprise API Access"
                 className="mx-auto mb-4"
               />
@@ -155,7 +155,7 @@ const PricingPlans = () => {
 
             <div className="text-center">
               <img
-                src="path-to-your-icon3" // Replace with your icon source
+                src="https://res-cdn.learnyst.com/pro/admin-v3/media/enterprise3.png" // Replace with your icon source
                 alt="Dedicated Customer Success Team"
                 className="mx-auto mb-4"
               />
