@@ -34,12 +34,20 @@ import SubscribeMobile from "./pages/SubscribeMobile";
 import Messenger from "./pages/Messenger";
 import Custom from "./pages/Custom";
 import PricingPlans from "./pages/PricingPlans";
+import NavigationMenuPage from "./pages/Navigation";
+import Coupon from "./pages/Coupon";
+import Wallet from "./pages/WalletSetting";
 
 const App = () => {
   const location = useLocation(); // Get the current location
 
   // Condition to hide the sidebar on the "/mobile" and "/subscribeMobile" pages
-  const hideSidebarPages = ["/mobile", "/subscribeMobile","/pricing"];
+  const hideSidebarPages = [
+    "/mobile",
+    "/subscribeMobile",
+    "/pricing",
+    "/navigation",
+  ];
   const isSidebarHidden = hideSidebarPages.includes(location.pathname);
 
   return (
@@ -88,8 +96,9 @@ const App = () => {
           <Route path="/custom" element={<Custom />} />
           <Route path="/pricing" element={<PricingPlans />} />
           <Route path="/marketing/messenger" element={<Messenger />} />
-          {/* <Route path="/marketing/coupons" element={<Coupons />} />
-        <Route path="/marketing/wallet" element={<Wallet />} /> */}
+          <Route path="/navigation" element={<NavigationMenuPage />} />
+          <Route path="/marketing/coupons" element={<Coupon />} />
+          <Route path="/marketing/wallet" element={<Wallet />} /> 
         </Routes>
       </div>
     </div>

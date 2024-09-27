@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Assuming you are using React Router
 
 const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState("monthly");
+  const navigate = useNavigate(); // Hook for navigation
 
   const plans = [
     {
@@ -47,10 +49,22 @@ const PricingPlans = () => {
   return (
     <div className="bg-white py-10 ">
       <div className="container mx-auto px-4">
+        
+        {/* Back Button */}
+        <div className="flex justify-start mb-6">
+          <button
+            className="text-green-500 font-semibold hover:underline"
+            onClick={() => navigate(-1)} // Go back to the previous page
+          >
+            ← Back
+          </button>
+        </div>
+        
         <h2 className="text-3xl font-bold text-center mb-6">Select Plan</h2>
         <p className="text-center text-gray-500 mb-4">
           0% Transaction fees, Keep 100% of your revenue
         </p>
+        
         <div className="flex justify-center gap-4 mb-8">
           <button
             className={`px-4 py-2 rounded-full ${

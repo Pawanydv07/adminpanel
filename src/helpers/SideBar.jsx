@@ -189,6 +189,12 @@ const Sidebar = () => {
                     Mobile Apps
                   </li>
                 </Link>
+                <Link to="/navigation">
+                  {" "}
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Navigation
+                  </li>
+                </Link>
                 <Link to="/branding">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">
                     Branding
@@ -207,11 +213,7 @@ const Sidebar = () => {
                 <Link to="signup">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">Sign Up</li>
                 </Link>
-                <Link to="/setting">
-                  <li className="py-1 hover:bg-gray-200 rounded-lg">
-                    Settings
-                  </li>
-                </Link>
+               
                 <Link to="/custom">
                   {" "}
                   <li className="py-1 hover:bg-gray-200 rounded-lg">
