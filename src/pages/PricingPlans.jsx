@@ -49,7 +49,6 @@ const PricingPlans = () => {
   return (
     <div className="bg-white py-10 ">
       <div className="container mx-auto px-4">
-        
         {/* Back Button */}
         <div className="flex justify-start mb-6">
           <button
@@ -59,12 +58,12 @@ const PricingPlans = () => {
             ← Back
           </button>
         </div>
-        
+
         <h2 className="text-3xl font-bold text-center mb-6">Select Plan</h2>
         <p className="text-center text-gray-500 mb-4">
           0% Transaction fees, Keep 100% of your revenue
         </p>
-        
+
         <div className="flex justify-center gap-4 mb-8">
           <button
             className={`px-4 py-2 rounded-full ${
@@ -104,8 +103,11 @@ const PricingPlans = () => {
               )}
               <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
               <p className="text-3xl font-bold">
-                ₹{billingCycle === "monthly" ? plan.priceMonthly : plan.priceAnnual}/
-                <span className="text-sm">month*</span>
+                ₹
+                {billingCycle === "monthly"
+                  ? plan.priceMonthly
+                  : plan.priceAnnual}
+                /<span className="text-sm">month*</span>
               </p>
               <p className="text-gray-500 text-sm mb-6">
                 (Billed {billingCycle})
@@ -125,7 +127,22 @@ const PricingPlans = () => {
                   Current Plan
                 </button>
               ) : (
-                <button className="w-full bg-green-500 text-white py-2 rounded-lg">
+                <button
+                  className={`w-full bg-green-500 text-white py-2 rounded-lg`}
+                  onClick={() =>
+                    navigate("/payment", {
+                      state: {
+                        plan: {
+                          name: plan.name,
+                          price:
+                            billingCycle === "monthly"
+                              ? plan.priceMonthly
+                              : plan.priceAnnual,
+                        },
+                      },
+                    })
+                  }
+                >
                   Buy {plan.name}
                 </button>
               )}
@@ -138,7 +155,8 @@ const PricingPlans = () => {
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold">Enterprise Plan</h2>
             <p className="text-gray-500">
-              Looking for something beyond our pricing plans? Book a call with our customer success team to discuss your requirements.
+              Looking for something beyond our pricing plans? Book a call with
+              our customer success team to discuss your requirements.
             </p>
           </div>
 
@@ -151,7 +169,8 @@ const PricingPlans = () => {
               />
               <h3 className="font-semibold">Custom Developed Apps</h3>
               <p className="text-gray-500">
-                Get your own custom designed app for your institute based on your requirements.
+                Get your own custom designed app for your institute based on
+                your requirements.
               </p>
             </div>
 
@@ -175,7 +194,8 @@ const PricingPlans = () => {
               />
               <h3 className="font-semibold">Dedicated Customer Success Team</h3>
               <p className="text-gray-500">
-                Get a dedicated success team for your institute, available to help and support.
+                Get a dedicated success team for your institute, available to
+                help and support.
               </p>
             </div>
           </div>
@@ -191,7 +211,8 @@ const PricingPlans = () => {
         <div className="mt-16 bg-gray-100 py-10">
           <h2 className="text-2xl font-bold text-center">Mobile Apps</h2>
           <p className="text-center mt-4">
-            Get your school in every learner's hand. Subscribe for white-labeled mobile apps from Rs. 4999/month.
+            Get your school in every learner's hand. Subscribe for white-labeled
+            mobile apps from Rs. 4999/month.
           </p>
 
           <div className="flex justify-center mt-6">

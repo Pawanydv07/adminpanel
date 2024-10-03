@@ -213,7 +213,7 @@ const Sidebar = () => {
                 <Link to="signup">
                   <li className="py-1 hover:bg-gray-200 rounded-lg">Sign Up</li>
                 </Link>
-               
+
                 <Link to="/custom">
                   {" "}
                   <li className="py-1 hover:bg-gray-200 rounded-lg">
@@ -334,56 +334,88 @@ const Sidebar = () => {
             </div>
             {openMenu === "reports" && (
               <ul className="ml-8 mt-2 space-y-2">
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Enrollments
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Transactions
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Payment Gateways
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Invoices</li>
+                <Link to="/reports/enrollments">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Enrollments
+                  </li>
+                </Link>
+                <Link to="/reports/transactions">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Transactions
+                  </li>
+                </Link>
+                <Link to="/reports/payment-gateways">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Payment Gateways
+                  </li>
+                </Link>
+                <Link to="/reports/invoices">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Invoices
+                  </li>
+                </Link>
                 <Link to="/progress">
-                  {" "}
                   <li className="py-1 hover:bg-gray-200 rounded-lg">
                     Progress & Scores
                   </li>
                 </Link>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Sales & Marketing
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Live Class - Legacy
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Live Class
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Custom Fields
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Digital Evaluation
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Legacy Reports
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Exports</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Broadcast Message
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Resource Usage
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Messenger Insights
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  School Payouts
-                </li>
+                <Link to="/reports/sales-marketing">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Sales & Marketing
+                  </li>
+                </Link>
+                <Link to="/reports/live-class-legacy">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Live Class - Legacy
+                  </li>
+                </Link>
+                <Link to="/reports/live-class">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Live Class
+                  </li>
+                </Link>
+                <Link to="/reports/custom-fields">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Custom Fields
+                  </li>
+                </Link>
+                <Link to="/reports/digital-evaluation">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Digital Evaluation
+                  </li>
+                </Link>
+                <Link to="/reports/legacy-reports">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Legacy Reports
+                  </li>
+                </Link>
+                <Link to="/reports/exports">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Exports</li>
+                </Link>
+                <Link to="/reports/broadcast-message">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Broadcast Message
+                  </li>
+                </Link>
+                <Link to="/reports/resource-usage">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Resource Usage
+                  </li>
+                </Link>
+                <Link to="/reports/messenger-insights">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Messenger Insights
+                  </li>
+                </Link>
+                <Link to="/reports/school-payouts">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    School Payouts
+                  </li>
+                </Link>
               </ul>
             )}
           </li>
+
           <li>
             <div
               className="flex items-center justify-between space-x-4 py-2 hover:bg-gray-100 rounded-lg cursor-pointer"
@@ -403,80 +435,154 @@ const Sidebar = () => {
             </div>
             {openMenu === "manage" && (
               <ul className="ml-8 mt-2 space-y-2">
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Courses</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Live Classes
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Mock Test</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Test Series
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Bundles</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Batch <span className="text-green-500 text-xs">(Beta)</span>
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Ebooks</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Podcasts</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Webinar</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Digital Products
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Free Resource
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Telegram</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Utilities</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Legacy Question Pool
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Question Pool
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Subscriptions
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Newsfeed</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Communities
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Categories
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Segments</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">Tags</li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Course Encryption
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Discussions
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Ratings & Reviews
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Legacy Answer Reviews
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Answer Reviews
-                </li>
-                <li className="py-1 hover:bg-gray-200 rounded-lg">
-                  Learner Support
-                </li>
+                <Link to="/manage/courses">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Courses</li>
+                </Link>
+                <Link to="/manage/live-classes">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Live Classes
+                  </li>
+                </Link>
+                <Link to="/manage/mock-test">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Mock Test
+                  </li>
+                </Link>
+                <Link to="/manage/test-series">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Test Series
+                  </li>
+                </Link>
+                <Link to="/manage/bundles">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Bundles</li>
+                </Link>
+                <Link to="/manage/batch">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Batch <span className="text-green-500 text-xs">(Beta)</span>
+                  </li>
+                </Link>
+                <Link to="/manage/ebooks">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Ebooks</li>
+                </Link>
+                <Link to="/manage/podcasts">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Podcasts
+                  </li>
+                </Link>
+                <Link to="/manage/webinar">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Webinar</li>
+                </Link>
+                <Link to="/manage/digital-products">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Digital Products
+                  </li>
+                </Link>
+                <Link to="/manage/free-resource">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Free Resource
+                  </li>
+                </Link>
+                <Link to="/manage/telegram">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Telegram
+                  </li>
+                </Link>
+                <Link to="/manage/utilities">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Utilities
+                  </li>
+                </Link>
+                <Link to="/manage/legacy-question-pool">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Legacy Question Pool
+                  </li>
+                </Link>
+                <Link to="/manage/question-pool">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Question Pool
+                  </li>
+                </Link>
+                <Link to="/manage/subscriptions">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Subscriptions
+                  </li>
+                </Link>
+                <Link to="/manage/newsfeed">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Newsfeed
+                  </li>
+                </Link>
+                <Link to="/manage/communities">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Communities
+                  </li>
+                </Link>
+                <Link to="/manage/categories">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Categories
+                  </li>
+                </Link>
+                <Link to="/manage/segments">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Segments
+                  </li>
+                </Link>
+                <Link to="/manage/tags">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">Tags</li>
+                </Link>
+                <Link to="/manage/course-encryption">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Course Encryption
+                  </li>
+                </Link>
+                <Link to="/manage/discussions">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Discussions
+                  </li>
+                </Link>
+                <Link to="/manage/ratings-reviews">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Ratings & Reviews
+                  </li>
+                </Link>
+                <Link to="/manage/legacy-answer-reviews">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Legacy Answer Reviews
+                  </li>
+                </Link>
+                <Link to="/manage/answer-reviews">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Answer Reviews
+                  </li>
+                </Link>
+                <Link to="/manage/learner-support">
+                  <li className="py-1 hover:bg-gray-200 rounded-lg">
+                    Learner Support
+                  </li>
+                </Link>
               </ul>
             )}
           </li>
-          <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg">
-            <BsFillGearFill className="text-xl" />
-            <span>Add-Ons</span>
-          </li>
-          <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg">
-            <MdOutlineSchool className="text-xl" />
-            <span>Sub-Schools</span>
-          </li>
-          <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg mt-auto">
-            <IoMdSettings className="text-xl" />
-            <span>Settings</span>
-          </li>
+
+          <Link to="/manage/addons">
+            <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg">
+              <BsFillGearFill className="text-xl" />
+              <span>Add-Ons</span>
+            </li>
+          </Link>
+          <Link to="/manage/subschool">
+            <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg">
+              <MdOutlineSchool className="text-xl" />
+              <span>Sub-Schools</span>
+            </li>
+          </Link>
+          <Link to="/manage/settings">
+            {" "}
+            <li className="flex items-center space-x-4 py-2 hover:bg-gray-100 rounded-lg mt-auto">
+              <IoMdSettings className="text-xl" />
+              <span>Settings</span>
+            </li>
+          </Link>
         </ul>
       </div>
 

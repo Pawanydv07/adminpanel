@@ -37,6 +37,12 @@ import PricingPlans from "./pages/PricingPlans";
 import NavigationMenuPage from "./pages/Navigation";
 import Coupon from "./pages/Coupon";
 import Wallet from "./pages/WalletSetting";
+import PaymentPage from "./pages/PaymentPage";
+import AppIntegrations from "./pages/AppIntegration";
+import AffiliatePage from "./pages/AffiliatePage";
+import FormPage from "./pages/FormPage";
+import FormCreate from "./pages/FormCreate";
+import CTAPage from "./pages/CTAPage";
 
 const App = () => {
   const location = useLocation(); // Get the current location
@@ -51,12 +57,12 @@ const App = () => {
   const isSidebarHidden = hideSidebarPages.includes(location.pathname);
 
   return (
-    <div className="flex">
-      {/* Conditionally render Sidebar, hide it on /mobile and /subscribeMobile routes */}
+    <div className="flex h-screen">
+      {/* Conditionally render Sidebar, hide it on specific routes */}
       {!isSidebarHidden && <Sidebar />}
 
-      {/* Main Content Area */}
-      <div className="flex-1 p-4">
+      {/* Main Content Area with scrolling enabled */}
+      <div className={`flex-1 p-4 overflow-y-auto ${isSidebarHidden ? 'overflow-hidden' : ''}`}>
         <Routes>
           {/* Route for Dashboard */}
           <Route path="/" element={<Dashboard />} />
@@ -98,7 +104,13 @@ const App = () => {
           <Route path="/marketing/messenger" element={<Messenger />} />
           <Route path="/navigation" element={<NavigationMenuPage />} />
           <Route path="/marketing/coupons" element={<Coupon />} />
-          <Route path="/marketing/wallet" element={<Wallet />} /> 
+          <Route path="/marketing/wallet" element={<Wallet />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/marketing/integrations"element={<AppIntegrations/>}/>
+          <Route path="/marketing/affiliates"element={<AffiliatePage/>}/>
+          <Route path="/marketing/forms"element={<FormPage/>}/>
+          <Route path="/marketing/form-create"element={<FormCreate/>}/>
+          <Route path="/marketing/cta"element={<CTAPage/>}/>
         </Routes>
       </div>
     </div>

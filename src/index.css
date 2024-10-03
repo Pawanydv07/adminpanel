@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css or a similar file */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full height for the body */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .h-screen {
+    height: 100vh;
+  }
+  
+  .flex-1 {
+    flex: 1; /* Allow this section to grow */
+  }
+  
+  .overflow-y-auto {
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  /* Sidebar styles to make it fixed */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Adjust as needed */
+    background: #f8f9fa; /* Sidebar background */
+    border-right: 1px solid #ddd; /* Optional border */
+    overflow-y: auto; /* Enable scrolling if needed */
+  }
+  
+  /* Main content area styles */
+  .main-content {
+    margin-left: 250px; /* Ensure the main content doesn't overlap with the sidebar */
+    padding: 20px;
+  }
+  
