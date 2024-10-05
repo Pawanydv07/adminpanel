@@ -63,15 +63,44 @@ const LearnerTable = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-semibold mb-4">Learner Progress Table</h1>
-      <div className="mb-4">
-        <input
-          type="text"
-          placeholder="Search by name"
-          className="px-4 py-2 border rounded-lg"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <h1 className="text-2xl font-semibold mb-4">Learners</h1>
+
+      {/* Header Actions */}
+      <div className="flex justify-between items-center mb-4">
+        {/* Search Bar */}
+        <div className="flex space-x-4">
+          <input
+            type="text"
+            placeholder="Search by Email (alt+k or cmd+k)"
+            className="px-4 py-2 border rounded-lg"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+            Search
+          </button>
+          <button className="bg-gray-200 px-4 py-2 rounded-lg border">
+            Add Filter
+          </button>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex space-x-4">
+          <button className="bg-gray-200 px-4 py-2 rounded-lg border">
+            Export
+          </button>
+          <button className="bg-gray-200 px-4 py-2 rounded-lg border">
+            Create Group
+          </button>
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+            Send Message
+          </button>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+            + ADD
+          </button>
+        </div>
       </div>
+
+      {/* Table */}
       <table className="min-w-full bg-white border rounded-lg">
         <thead>
           <tr>
@@ -125,7 +154,7 @@ const LearnerTable = () => {
             <button
               key={i + 1}
               onClick={() => paginate(i + 1)}
-              className={`px-4 py-2 border rounded-md ${
+              className={`px-4 py-2 border rounded-md mx-1 ${
                 i + 1 === currentPage ? "bg-blue-600 text-white" : "bg-gray-200"
               }`}
             >

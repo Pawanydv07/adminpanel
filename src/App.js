@@ -43,6 +43,8 @@ import AffiliatePage from "./pages/AffiliatePage";
 import FormPage from "./pages/FormPage";
 import FormCreate from "./pages/FormCreate";
 import CTAPage from "./pages/CTAPage";
+import EventsPage from "./pages/EventPage";
+import EventCreate from "./pages/EventCreate";
 
 const App = () => {
   const location = useLocation(); // Get the current location
@@ -111,6 +113,8 @@ const App = () => {
           <Route path="/marketing/forms"element={<FormPage/>}/>
           <Route path="/marketing/form-create"element={<FormCreate/>}/>
           <Route path="/marketing/cta"element={<CTAPage/>}/>
+          <Route path="/marketing/events"element={<EventsPage/>}/>
+          <Route path="/marketing/event-create"element={<EventCreate/>}/>
         </Routes>
       </div>
     </div>
